@@ -12,6 +12,7 @@ void setup() {
   //Serial.begin(9600);
 
   Keyboard.begin(KeyboardLayout_de_DE);
+  USB.productName("Flyswatter");
   USB.begin();
 
   delay(1000);
